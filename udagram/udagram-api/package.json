@@ -9,7 +9,9 @@
     "dev": "npx ts-node-dev --respawn ./src/server.ts --transpile-only",
     "prod": "npx tsc && node server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
+    "deploy": "npm run build && ebset && eb list && eb use udagram-api-dev && eb deploy",
+    "ebset": "cd .elasticbeanstalk && echo 'deploy:\n  artifact: www/Archive.zip' >> config.yml",
+    "ebinit": "eb init udagram-api --platform node.js-14 --region us-east-1 && npm run ebset",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
