@@ -66,6 +66,7 @@ workflows:
   udagram:
     jobs:
       - build
+      - request-approval
       - hold:
           filters:
             branches:
