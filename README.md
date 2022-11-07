@@ -1,5 +1,7 @@
 # Hosting a Full-Stack Application
 
+[View Client-side](http://udagrambuck.s3.amazonaws.com/index.html)
+
 ### Dependencies
 
 - NodeJS LTS
@@ -11,6 +13,16 @@
 - Postgres Database.
 
 - File storage for pictures.
+
+### Infrastructure
+
+- Github - CircleCI - AWS RDS - AWS S3 - AWS Elastic Beanstalk
+
+### Pipeline process
+
+- Build
+- Hold
+- Deploy on approval
 
 ### AWS Dependencies
 
@@ -96,3 +108,18 @@ head over to the package.json in deploy script edit the deploy enviroment type t
 
 - Finally you can run npm run deploy to deploy the backend.
 - Head over to your elastic beanstalk and copy the url of it and use it as the api host at the frontend files.
+
+- Grab the url for the backend from EB instance and add it into front-end enviroment apiHost
+
+#### CircleCI Requirements
+
+```
+AWS_ACCESS_KEY_ID
+
+AWS_DEFAULT_REGION
+
+AWS_SECRET_ACCESS_KEY
+
+```
+
+- Upon github push it will build and await the approval.
