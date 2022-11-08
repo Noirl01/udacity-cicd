@@ -66,18 +66,18 @@ workflows:
     jobs:
       - build
           filters:
-             branches:
-               only: main/master
+            branches:
+              only: main
       - hold:
           type: approval
           requires:
             - build
           filters:
             branches:
-              only: main/master
+              only: main
       - deploy:
           requires:
             - hold
           filters:
             branches:
-              only: main/master
+              only: main
