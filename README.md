@@ -1,7 +1,8 @@
 # Hosting a Full-Stack Application
 
 [View Client-side](http://udagrambuck.s3.amazonaws.com/index.html)
-[![Noirl01](https://circleci.com/github/Noirl01/udacity-cicd.svg?style=svg)](http://udagrambuck.s3.amazonaws.com/index.html)
+[![Noirl01](https://circleci.com/github/Noirl01/udacity-cicd.svg?style=svg&circle-token=a175d0b5068e03f1c07b7a71a132958c48289112)](http://udagrambuck.s3.amazonaws.com/index.html)
+
 
 ### Dependencies
 
